@@ -1,0 +1,22 @@
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+int main()
+{
+    vector<int> v;
+    int x;
+    while(cin >> x){
+        v.push_back(x);
+    }
+    for(int a : v){
+        cout << "SystemIP=1.1.1." << a << endl;
+        cout << "SystemUserName=apc" << endl;
+        cout << "SystemPassword=apc" << endl;
+        cout << "AllowDowngrade=1" << endl;
+        cout << endl;
+    }
+
+    return 0;
+}
