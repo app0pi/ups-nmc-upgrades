@@ -1,3 +1,14 @@
+//created by app0pi on 9/24/2019
+//last modified 10/23/2019
+//C++ script to generate IP list for Network Management Card 2 (AP9630, AP9631, AP9635) upgrades
+//past result into iplist.txt in same folder as upgrade wizard application
+/*IP list format:
+* SystemIP=168.192.0.1
+* SystemUserName=username
+* SystemPassword=password
+* AllowDowngrade=1
+*/
+
 #include <iostream>
 #include <vector>
 
@@ -5,16 +16,18 @@ using namespace std;
 
 int main()
 {
-    vector<int> v;
+    vector<int> v; //or initialize vector v with list of host ID numbers
     int x;
     while(cin >> x){
+        //prompts user to repeatedly enter different host ID numbers
         v.push_back(x);
+        //enter non-integer to exit
     }
     for(int a : v){
-        cout << "SystemIP=1.1.1." << a << endl;
-        cout << "SystemUserName=apc" << endl;
-        cout << "SystemPassword=apc" << endl;
-        cout << "AllowDowngrade=1" << endl;
+        cout << "SystemIP=168.192.0." << a << endl; //change network ID to match company network ID
+        cout << "SystemUserName=apc" << endl; //change username from apc to username
+        cout << "SystemPassword=apc" << endl; //change password from apc to password
+        cout << "AllowDowngrade=1" << endl; //change 1 to 0 to disallow downgrade
         cout << endl;
     }
 
