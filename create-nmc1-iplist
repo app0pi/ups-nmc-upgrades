@@ -1,0 +1,33 @@
+//created by app0pi on 10/23/2019
+//last modified 10/23/2019
+//C++ script to generate IP list for Network Management Card 1 (AP9617, AP9618, AP9619) upgrades
+//past result into iplist.txt in same folder as upgrade wizard application
+/*IP list format:
+* SystemIP=168.192.0.1
+* SystemUserName=username
+* SystemPassword=password
+*/
+
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+int main()
+{
+    vector<int> v; //or initialize vector v with list of host ID numbers
+    int x;
+    while(cin >> x){
+        //prompts user to repeatedly enter different host ID numbers
+        v.push_back(x);
+        //enter non-integer to exit
+    }
+    for(int a : v){
+        cout << "SystemIP=168.192.0." << a << endl; //change network ID to match company network IP
+        cout << "SystemUserName=apc" << endl; //change apc to username
+        cout << "SystemPassword=apc" << endl; //change apc to password
+        cout << endl;
+    }
+    
+    return 0;
+}
