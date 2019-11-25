@@ -23,7 +23,7 @@ int main()
         //enter non-integer to exit
     }
     for(int a : v){
-        cout << "SystemIP=168.192.0." << a << endl; //change network ID to match company network IP
+        cout << "SystemIP=168.192." << a << endl; //change network ID to match company network IP
         cout << "SystemUserName=apc" << endl; //change apc to username
         cout << "SystemPassword=apc" << endl; //change apc to password
         cout << endl;
