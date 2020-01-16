@@ -1,0 +1,35 @@
+//created by app0pi on 1/16/2020
+//last modified 1/16/2020
+//C++ script to upload config files to multiple UPSs
+//past result into upload_list.txt in same folder as INI Utility
+/*IP list format:
+ * SystemIP=168.192.0.1
+ * IniFileName=config.ini
+ * SystemUserName=apc
+ * SystemPassword=apc
+*/
+
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+int main()
+{
+    vector<int> v; //or initialize vector v with list of host ID numbers
+    int x;
+    while(cin >> x){
+        //prompts user to repeatedly enter different host ID numbers
+        v.push_back(x);
+        //enter non-integer to exit
+    }
+    for(int a : v){
+        cout << "SystemIP=168.192.0." << a << endl; //change network ID to match company network ID
+        cout << "IniFileName=config.ini" << endl; //change file name from config.ini to config file
+        cout << "SystemUserName=apc" << endl; //change username from apc to username
+        cout << "SystemPassword=apc" << endl; //change password from apc to password
+        cout << endl;
+    }
+
+    return 0;
+}
